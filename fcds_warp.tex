@@ -1,0 +1,128 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage{fcds}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage[labelsep=period]{caption}
+\usepackage{enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage{titlesec}
+\titlelabel{\thetitle.\quad}
+\usepackage[top=5.5cm, bottom=5cm, left=4cm, right=4cm]{geometry}
+\graphicspath{ {./pics/} }
+\newcommand{\ax}{a\hspace{-0.45mm}{\scriptsize $\!_{\mbox{\char 62}}$}
+\hspace{-0.31mm}}
+\date{}
+\providecommand{\keywords}[1]{\textbf{{Keywords---}} #1}
+%\renewcommand{\thesubsection}{\arabic{subsection}}
+
+\title{\textbf{Sample Foundations of Computing and Decision Sciences Article on Applications of Warp Drive}}
+
+
+\author{ $\,\,\,\,\,\,\,$ John Doe, Jane Doe \address{Faculty of Computing, Bespin University, Yavin, \{john.doe, jane.doe\}@mail.com}}
+
+
+
+\begin{document}
+
+
+\maketitle
+
+
+\begin{abstract}
+This is an abstract of the article. It should'nt be too long, at most 12 lines of text. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sodales eu urna a rutrum. Ut interdum iaculis magna, a condimentum justo congue vitae. Suspendisse lobortis fringilla nisi, a pharetra ipsum. Etiam vehicula ut ex ac ullamcorper. Suspendisse potenti. Suspendisse luctus sed nisl non scelerisque. Ut non condimentum magna. Cras placerat, turpis nec tempus suscipit, nisl purus convallis risus, ac malesuada sapien felis vel lectus. In consequat neque ac fermentum ullamcorper. Donec arcu purus, porttitor a tortor scelerisque, commodo sollicitudin mi. Nam et nulla nec urna iaculis efficitur.
+\end{abstract}
+
+\begin{keywords}
+FTL travel, warp-drive, antimatter
+\end{keywords}
+
+
+\section{Introduction}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse at nisl viverra odio facilisis pharetra sit amet vitae ipsum. Maecenas iaculis maximus risus ut mattis. Cras eu interdum arcu. In imperdiet rhoncus neque varius ullamcorper. Sed lobortis eget augue quis auctor. Fusce lacinia dignissim mi a tristique. Vivamus sed urna eget neque elementum sodales. Nam a placerat nibh. Nulla cursus lacus sed tincidunt fermentum. Sed placerat, lectus eu hendrerit pellentesque, ipsum turpis auctor neque, at lobortis orci nibh a sapien. Pellentesque rhoncus fringilla fringilla. Praesent condimentum laoreet dolor, vel consectetur ligula tempus ut. Nulla eu nibh blandit, malesuada leo et, ornare erat. Nulla accumsan malesuada nulla, in sagittis lectus convallis nec. Praesent vel ornare velit, quis imperdiet metus. Interdum et malesuada fames ac ante ipsum primis in faucibus. \cite{Doe}
+
+\section{Graphics and other elements}
+Citations should be in square brackets, like this \cite{Kowalski}. \\
+You can embed figures using PNG file format. Please note, that the print version of the journal is Black and White -- be sure your figures are clearly readable in BW or simply make them monochrome.
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{fig1.png}
+    \caption{Schema of warp drive}
+    \label{fig:warp_schema}
+\end{figure}
+\subsection{Enumerations and bullets}
+This is an enumeration:
+
+\begin{enumerate}[leftmargin=1cm]
+  \item First item
+  \item Second item
+\end{enumerate}
+
+\noindent And now with bullets:
+
+\begin{itemize}
+  \item Some text
+  \item Some more text
+  \item blah, blah.
+\end{itemize}
+
+\subsection{Table example}
+Table~\ref{tab:warp_table} is an examplary table:
+
+\begin{table}[!htbp] %This makes table stuck in place not floating
+\centering
+\caption{Maximum warp drive factor}
+\label{tab:warp_table}
+\begin{tabular}{lll}
+No. & Registry number & Maximum warp speed \\
+1   & NCC-1701        & 6                  \\
+2   & NCC-1701D       & 9                  \\
+3   & NCC-74656       & 9.975              \\
+4   & NCC-1701E       & 9.9               
+\end{tabular}
+\end{table}
+
+
+\subsection{Warp coil}
+
+Figure~\ref{fig:warp_coil} presents a heart of the warp drive.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.7\textwidth]{fig2.png}
+    \caption{Schema of warp coil}
+    \label{fig:warp_coil}
+\end{figure}
+
+\section{Equations}
+Mauris ac massa consectetur, fringilla elit vitae, elementum ipsum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Ut eget porttitor augue. Vivamus pharetra volutpat purus, fermentum vulputate mi scelerisque at. Mauris non sem vitae nulla malesuada tempus. Nunc tristique eleifend rutrum. Integer eu erat ac tellus dictum sagittis ultrices vel augue. Nullam posuere tellus vel arcu lacinia, non blandit mauris hendrerit. Aenean gravida, nunc nec malesuada maximus, mauris orci laoreet metus, non fringilla urna purus ut metus. Nunc vestibulum lacus in felis tristique, ac dictum leo euismod. Nullam venenatis leo quis velit pulvinar semper. Etiam a sollicitudin ligula. Cras lobortis eu enim quis egestas. Aliquam erat volutpat. Nulla eu dolor aliquet, ullamcorper sapien et, finibus tellus.
+
+\begin{eqnarray} d s^2
+&=& - \, d \tau^2 \;\;=\;\; g_{\alpha \beta} \; d x^{\alpha} \, d
+x^{\beta} \nonumber \\ &=& - \left( \alpha^2 - \beta_i \, \beta^i
+\right) \, d t^2 \,+\, 2 \, \beta_i \, d x^i \, d t \,+\, \gamma_{ij}
+\; d x^i \, d x^j \;\; .  \label{warpeq}  \end{eqnarray}
+
+Equation~\ref{warpeq} shows the famous warp equation, while eqaution~\ref{hypereq} shows now obsolete hyperdrive equation.
+
+ \begin{equation}
+\lim_{\sigma \rightarrow \infty} \, f \left( r_s \right) \;\;=\;\; \left\{ \begin{array}{l} 1 \hspace{5mm}  {\rm for}
+\hspace{4mm} r_s \,\in\, \left[ -R,\,R \right] \;\; , \\ 0 \hspace{5mm}
+{\rm otherwise} \;\; .  \end{array} \right. \label{hypereq} \end{equation}
+
+\section*{Acknowledgment}
+This work was supported by United Federation of Planets grant BP73/170815/77-0811.\linebreak\textbf{Please note, that the following bibliography should be sorted by first authors last name.}
+
+\bibliographystyle{fcds_abbrv}
+\begin{thebibliography}{2}
+%
+\bibitem{Doe}
+Doe J., Doe J., Performance of hypedrive near the Supernova \emph{International Journal of galactic travel}, {\bf 7}, 4, 2051, 343--358.
+%
+\bibitem{Kowalski}
+Kowalski J., Warp 10 travel is possible \emph{Proceedings of the 21st Intergalactic Symposium on Space Travel}, 2060, 1425--1430.
+\end{thebibliography}
+\noindent{\emph{Please leave some space here for submission and acceptance date}}
+\end{document}
+
+

@@ -1,0 +1,223 @@
+%%  Usage:
+
+%%  \documentclass[a4paper,10pt]{article}
+
+%%  \usepackage{fcds}
+
+%%  \title{TITLE OF THE PAPER}
+
+%%  \author{Firstname1 LASTNAME1 \address{Adress_1}, Firstname2 LASTNAME2 \address{Adress_2}}
+
+%%  \begin{document}
+
+%%  \maketitle
+
+%%  \begin{abstract}
+
+%%  Abstract....
+
+%%  \end{abstract}
+
+%%  \begin{keywords}
+
+%%  keyword1, keyword2, ...
+
+%%  \end{keywords}
+
+%%  Paper body
+
+%%  \end{document}
+
+
+
+
+
+\typeout{Foundations of Computing and Decision Sciences Style by Viet Nguyen Hoang}
+
+\if@titlepage
+  \newenvironment{keywords}{%
+      \titlepage
+      \null\vfil
+      \@beginparpenalty\@lowpenalty
+      \begin{center}%
+        \bfseries \keywordsname
+        \@endparpenalty\@M
+      \end{center}}%
+     {\par\vfil\null\endtitlepage}
+\else
+  \newenvironment{keywords}{%
+      \if@twocolumn
+        \section*{\keywordsname}%
+      \else
+        \small
+        \begin{center}%
+          {\bfseries \keywordsname\vspace{-.5em}\vspace{\z@}}%
+        \end{center}%
+        \quotation
+      \fi}
+      {\if@twocolumn\else\endquotation\fi}
+\fi
+\newcommand\keywordsname{Keywords}
+
+\pagestyle{empty}   %%  no page numbering at all
+
+
+
+%%  Change the size of text field, margin and so on
+
+\newlength{\tmpLength}
+
+\setlength{\tmpLength}{\oddsidemargin}
+
+\addtolength{\tmpLength}{\evensidemargin}
+
+\addtolength{\tmpLength}{\textwidth}
+
+
+
+\textheight 192mm
+
+\textwidth 130mm
+
+\addtolength{\tmpLength}{-1\textwidth}
+
+
+
+\setlength{\oddsidemargin}{0.5\tmpLength}
+
+\setlength{\evensidemargin}{0.5\tmpLength}
+
+\parindent=5mm   % set the indent size
+
+
+
+%%  new title style
+
+%% defines address
+
+\def\@address{}
+
+\newcounter{addresscounter}
+
+\newcounter{addressFNcounter}
+
+\setcounter{addresscounter}{1}
+
+\setcounter{addressFNcounter}{1}
+
+
+
+\def\address#1{
+
+    \begingroup
+
+    \def\@makefnmark{\hbox{$^{\fnsymbol{addresscounter}}$\hss}}
+
+    \hskip -0.5ex\footnotemark[\value{addresscounter}]\hskip -1.8ex
+
+    \addtocounter{addresscounter}{1}
+
+    \protected@xdef\@address{\@address
+
+        \protect\footnotetext[\value{addressFNcounter}]{#1}
+
+        \addtocounter{addressFNcounter}{1}
+
+        }
+
+    \endgroup
+
+}
+
+
+
+\def\@authorfnmark{\fnsymbol{addressFNcounter}}
+
+
+
+\def\@maketitle{
+
+ \null %% must be here since we want to leave 2 cm above the title
+
+ \begingroup
+
+ \def\@makefnmark{\hbox{$^{\@authorfnmark}$\hss}}
+
+ \begin{center}
+
+ \vskip 2cm     %%  keep 2 cm above the title
+
+ {\fontsize{12pt}{14pt}\bf \@title \par} %%the title itself
+
+ \vskip 1cm     %%  keep 1 cm below the title
+
+ {\normalsize\lineskip .5em
+
+ \begin{tabular}[t]{l}\@author
+
+ \end{tabular}\par}
+
+ \end{center}
+
+ \@address
+
+ \vskip 1cm
+
+ \@thanks
+
+ \endgroup
+
+ \def\@makefnmark{\hbox{$^{\@thefnmark}$\hss}}
+
+}
+
+\def\maketitle{
+
+\@maketitle
+
+}
+
+
+
+
+
+%%  new Abstract env.
+
+\renewenvironment{abstract}{\indent {\bfseries Abstract.}}{}
+
+
+%%  new Keywords env.
+
+\renewenvironment{keywords}{ \vskip 0.5cm \indent {\bfseries Keywords:}}{}
+
+
+%%  new section headings
+
+\setcounter{secnumdepth}{3}
+
+\def\section{\@startsection{section}{1}{\z@}{-9mm}{5mm}{\normalfont\fontsize{12pt}{14pt}\bfseries}}
+
+\def\subsection{\@startsection{subsection}{2}{\z@}{-7mm}{5mm}{\normalfont\fontsize{11pt}{13pt}\bfseries}}
+
+\def\subsubsection{\@startsection{subsubsection}{3}{\z@}{-7mm}{5mm}{\normalfont\normalsize\bfseries}}
+
+
+
+
+
+
+
+%change the figure caption style
+
+\def\thefigure{\@arabic\c@figure}
+
+\def\fnum@figure{{\bf Figure~\thefigure}}
+
+
+
+%change the figure caption style
+
+\def\thetable{\@arabic\c@table}
+
+\def\fnum@table{{\bf Table~\thetable}}
+
